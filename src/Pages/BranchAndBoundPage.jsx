@@ -2,7 +2,9 @@ import React, {useContext, useState} from 'react';
 import MatrixInput from './MatrixInput';
 import { findMinCost } from '../Components/BranchAndBound.jsx';
 import ResultTable from '../Components/ResultTable';
-import {MatrixContext} from "../Context/MatrixContext.jsx";  // Import component mới
+import {MatrixContext} from "../Context/MatrixContext.jsx";
+import FlowChart from "../Components/FlowChart.jsx";
+import FlowTree from "../Components/FlowChart.jsx";  // Import component mới
 
 function BranchAndBoundPage() {
     const { matrix, N } = useContext(MatrixContext);
@@ -18,6 +20,7 @@ function BranchAndBoundPage() {
 
             {/* Sử dụng ResultTable để hiển thị kết quả */}
             <ResultTable data={resultBranch} title="Branch and Bound" costKey="costBranch" assignmentsKey="assignmentsBranch" />
+            <FlowTree></FlowTree>
         </div>
     );
 }
