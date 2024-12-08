@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { MatrixContext } from '../Context/MatrixContext.jsx';
+import './Css/MatrixInput.css'
 
 function MatrixInputPage() {
     const { matrix, setMatrix, setN } = useContext(MatrixContext);
@@ -42,7 +43,7 @@ function MatrixInputPage() {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = (e) => {
+            reader.onload = async (e) => {
                 try {
                     const text = e.target.result;
 
@@ -54,6 +55,9 @@ function MatrixInputPage() {
                             .trim()
                             .split('\n')
                             .map(row => row.split(delimiter).map(Number));
+                        await setMatrix(parsedMatrix);
+                        console.log("Upload file ",matrix,parsedMatrix)
+                        await setN(parsedMatrix.length);
                     } else if (file.name.endsWith('.json')) {
                         parsedMatrix = JSON.parse(text);
                     } else {
@@ -68,7 +72,7 @@ function MatrixInputPage() {
                             row.length === parsedMatrix[0].length
                         )
                     ) {
-                        console.log(parsedMatrix)
+                        console.log("lmk",matrix)
                         setMatrix(parsedMatrix);
                         setN(parsedMatrix.length);
                     } else {
@@ -85,7 +89,7 @@ function MatrixInputPage() {
 
     return (
         <div>
-            <h1>Enter Cost Matrix</h1>
+            <h1>Enter Row/Colum Matrix</h1>
 
             <button onClick={addRowAndColumn}>Add Row and Column</button>
             <button onClick={removeRowAndColumn}>Remove Row and Column</button>

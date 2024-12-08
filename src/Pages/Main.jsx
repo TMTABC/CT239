@@ -5,10 +5,10 @@ import {MatrixProvider} from "../Context/MatrixContext.jsx";
 
 function Main() {
     return (
-        <MatrixProvider>
+        <>
             <NavBar></NavBar>
             <MatrixInput/>
-    </MatrixProvider>
+    </>
 
     );
 }

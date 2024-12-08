@@ -2,24 +2,32 @@
 ul.navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #333;
-    padding: 10px;
+    align-items: center;
+    background-color: #0e8c5a; /* Màu nền tối */
+    padding: 15px 30px; /* Khoảng cách trong navbar */
+    margin: 0;
     list-style-type: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    border-radius: 8px; /* Bo góc navbar */
 }
 
 ul.navbar li {
     list-style: none;
+    margin: 0 15px; /* Khoảng cách giữa các mục */
 }
 
 ul.navbar li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    padding: 10px;
+    font-weight: 500; /* Đậm vừa phải */
+    padding: 8px 15px;
     transition: all 0.3s ease;
+    border-radius: 4px; /* Bo góc khi hover */
 }
 
 ul.navbar li a:hover {
-    color: #ffdd57;
-    transform: scale(1.1);
+    color: #ffdd57; /* Màu vàng sáng khi hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Màu nền nhấn khi hover */
+    transform: scale(1.1); /* Phóng to nhẹ */
 }

@@ -1,26 +1,55 @@
+/* Bảng kết quả */
 table.result-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: #ffffff; /* Màu nền trắng */
+    border-radius: 8px; /* Bo góc */
+    overflow: hidden; /* Loại bỏ viền cứng */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
 }
 
-table.result-table th, table.result-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
+/* Tiêu đề bảng */
 table.result-table th {
-    background-color: #f4f4f4;
+    background-color: #4CAF50; /* Màu nền xanh lá */
+    color: white; /* Màu chữ trắng */
     font-weight: bold;
+    text-transform: uppercase; /* Chữ in hoa */
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 1rem;
 }
 
+/* Nội dung bảng */
 table.result-table td {
-    background-color: #fafafa;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333; /* Màu chữ */
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    border-bottom: 1px solid #ddd; /* Viền giữa các hàng */
 }
 
+/* Hàng chẵn và lẻ */
+table.result-table tr:nth-child(even) td {
+    background-color: #f4f4f4;
+}
+
+/* Hiệu ứng khi di chuột qua */
+table.result-table tr:hover td {
+    background-color: #e8f5e9; /* Màu nền khi hover */
+    color: #333; /* Màu chữ khi hover */
+    transition: all 0.3s ease; /* Hiệu ứng mượt */
+}
+
+/* Tiêu đề bảng */
 .result-header {
     font-size: 1.5rem;
-    color: #333;
+    color: #4CAF50; /* Màu xanh lá nổi bật */
     margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; /* Canh giữa */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
