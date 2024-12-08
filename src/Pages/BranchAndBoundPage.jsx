@@ -13,14 +13,18 @@ function BranchAndBoundPage() {
         setResultBranch(findMinCost(matrix, N));
     };
 
+    console.log(N,resultBranch)
     return (
         <div>
             <h1>Branch and Bound Algorithm</h1>
             <button onClick={handleBranchAndBound}>Calculate Optimal Cost Branch and Bound</button>
 
             {/* Sử dụng ResultTable để hiển thị kết quả */}
-            <ResultTable data={resultBranch} title="Branch and Bound" costKey="costBranch" assignmentsKey="assignmentsBranch" />
-            <FlowTree></FlowTree>
+            <ResultTable data={resultBranch}
+                         title="Branch and Bound"
+                         costKey="optimalCost" // Khớp với dữ liệu trả về từ findMinCost
+                         assignmentsKey="assignments"  />
+            <FlowTree costMatrix={matrix} N={N}></FlowTree>
         </div>
     );
 }

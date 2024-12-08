@@ -5,13 +5,15 @@ import ResultTable from '../Components/ResultTable';
 import {MatrixContext} from "../Context/MatrixContext.jsx";
 
 function GreedyPage() {
-    const { matrix,N } = useContext(MatrixContext)
+    const { matrix,N,setN } = useContext(MatrixContext)
 
     const [resultJob, setResultJob] = useState(null);
     const [resultFind, setResultFind] = useState(null);
     const [resultTime, setResultTime] = useState(null);
 
     const handleGreedy = () => {
+        console.log(matrix, N)
+        setN(matrix.length)
         setResultJob(jobSeeker(matrix, N));
         setResultFind(findWorker(matrix, N));
         setResultTime(timeMin(matrix, N));

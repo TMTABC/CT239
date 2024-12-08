@@ -20,8 +20,8 @@ const ResultTable = ({ data, title, costKey, assignmentsKey }) => {
                 <tbody>
                 {data[assignmentsKey].map((assignment, index) => (
                     <tr key={index}>
-                        <td>Worker {assignment.worker}</td>
-                        <td>Job {assignment.job}</td>
+                        <td>Worker {assignment.worker+1}</td>
+                        <td>Job {assignment.job +1}</td>
                         <td>{assignment.cost}</td>
                     </tr>
                 ))}
